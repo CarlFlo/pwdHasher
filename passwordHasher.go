@@ -19,9 +19,11 @@ func Hash(plaintext string) (string, error) {
 }
 
 // Compare compares a plaintext password to the provided hash
-func Compare(plainText, hash string) (bool, error) {
+//
+// Return nil on success
+func Compare(plainText, hash string) error {
 
-	return true, nil
+	return nil
 }
 
 func generateSalt() string {
