@@ -1,6 +1,6 @@
 # bcrypt
 
-A user friendly module for hashing passwords using my implementation of [bcrypt](https://en.wikipedia.org/wiki/Bcrypt). 
+A user friendly module for hashing passwords and then verifying them
 
 Test coverage: **0%**
 
@@ -11,7 +11,7 @@ Todo
 ## Install
 
 ```
-go get github.com/CarlFlo/bcrypt
+go get github.com/CarlFlo/passwordHasher
 ```
 
 ## Usage
