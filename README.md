@@ -37,18 +37,22 @@ The password with be hashes with a random salt. The result of the hash will be h
 hash, err := pwdHasher.Hash("password123")
 ```
 
-Here is how it can be done with custom settings
+Here is how it can be done with custom settings:
 
 ```go
 rounds := 10 // Min: 2, max: 256
-salt := "salt" // Maximum 16 characters, random if length is 0 -> ""
+salt := "salt" // Maximum 16 characters, random if length is 0 i.e. ""
 hash, err := pwdHasher.HashCustom("password123", salt, rounds)
 ```
 
-Comparing a plaintext password with a hash
+Comparing a plaintext password with a hash:
 
 ```go
 // If err is nil then it was a success
 hash := "m2jtckW-PFTd?10?8cc4225f1dc9bf97a63829fc4fef407cdf897fad92f524172c4e200b9c6353a8"
 err := pwdHasher.Compare("This is a test", hash)
+
+if err == nil {
+    fmt.Printf("The plaintext matched with the hash!\n")
+}
 ```
