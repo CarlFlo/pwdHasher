@@ -2,7 +2,7 @@
 
 A user friendly module for hashing passwords, using SHA256, and then verifying them.
 
-The module hashes a plaintext message + salt and then hashes it multible times in rounds to make it computationally infeasible to bruteforce it to uncover the plaintext message.
+The module hashes a plaintext password with the salt and then hashes it multible times (hash+password+salt) in rounds to make it computationally infeasible to bruteforce it to uncover the plaintext message.
 
 Test coverage: **87.2%**
 
