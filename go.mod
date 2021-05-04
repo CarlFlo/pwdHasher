@@ -1,3 +1,3 @@
-module github.com/CarlFlo/bcrypt
+module github.com/CarlFlo/pwdHasher
 
 go 1.16
