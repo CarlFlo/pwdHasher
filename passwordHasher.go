@@ -40,7 +40,7 @@ func HashCustom(plaintext, salt string, rounds int) (string, error) {
 	h.Write([]byte(fmt.Sprintf("%s%s", plaintext, salt)))
 
 	for i := 1; i < rounds; i++ {
-		h.Write([]byte(fmt.Sprintf("%x", h.Sum(nil))))
+		h.Write([]byte(fmt.Sprintf("%x%s%s", h.Sum(nil), plaintext, salt)))
 	}
 
 	return fmt.Sprintf("%s?%d?%x", salt, rounds, h.Sum(nil)), nil

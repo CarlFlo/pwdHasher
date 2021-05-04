@@ -31,7 +31,7 @@ This means that all information that is required to compare a hash with a plaint
 
 ### Examples
 
-The password will be hashes with a random salt and the result of the first hash will be hashes again 10 times by default.
+The password will be hashes with a random salt and the result of the first hash will be hashes again (together with the password and salt) 10 times by default.
 
 ```go
 hash, err := pwdHasher.Hash("password123")
@@ -48,7 +48,7 @@ hash, err := pwdHasher.HashCustom("password123", salt, rounds)
 How to compare a plaintext password with a hash:
 
 ```go
-hash := "m2jtckW-PFTd?10?8cc4225f1dc9bf97a63829fc4fef407cdf897fad92f524172c4e200b9c6353a8"
+hash := "m2jtckW-PFTd?10?ccce082519ed081bc2f6926cc924fa9ffdda96bd4a9be9217b6191d5518c58d9"
 err := pwdHasher.Compare("This is a test", hash)
 
 // If err is nil then it was a success
