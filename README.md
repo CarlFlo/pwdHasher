@@ -27,11 +27,11 @@ Hashes created by this program will follow this format **\<salt>?\<rounds>?\<sha
 
 Example: **m2jtckW-PFTd?10?8cc4225f1dc9bf97a63829fc4fef407cdf897fad92f524172c4e200b9c6353a8**
 
-This means that with a hash and a plaintext message can a hash be comapred against a plaintext message.
+This means that all information that is required to compare a hash with a plaintext password is available.
 
 ### Examples
 
-The password with be hashes with a random salt. The result of the hash will be hashes again 10 times (default).
+The password with be hashes with a random salt. The result of the hash will be hashes again 10 times by default.
 
 ```go
 hash, err := pwdHasher.Hash("password123")
@@ -45,13 +45,13 @@ salt := "salt" // Maximum 16 characters, random if length is 0 i.e. ""
 hash, err := pwdHasher.HashCustom("password123", salt, rounds)
 ```
 
-Comparing a plaintext password with a hash:
+How to compare a plaintext password with a hash:
 
 ```go
-// If err is nil then it was a success
 hash := "m2jtckW-PFTd?10?8cc4225f1dc9bf97a63829fc4fef407cdf897fad92f524172c4e200b9c6353a8"
 err := pwdHasher.Compare("This is a test", hash)
 
+// If err is nil then it was a success
 if err == nil {
     fmt.Printf("The plaintext matched with the hash!\n")
 }
