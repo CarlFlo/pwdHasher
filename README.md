@@ -23,7 +23,7 @@ go get github.com/CarlFlo/pwdHasher
 
 Anyways...
 
-Hashes created by this program will follow this format **\<salt>?\<rounds>?\<sha256>**.
+Hashes created by this program will follow this format: **\<salt>?\<rounds>?\<sha256>**.
 
 Example: **m2jtckW-PFTd?10?8cc4225f1dc9bf97a63829fc4fef407cdf897fad92f524172c4e200b9c6353a8**
 
@@ -31,7 +31,7 @@ This means that all information that is required to compare a hash with a plaint
 
 ### Examples
 
-The password with be hashes with a random salt. The result of the hash will be hashes again 10 times by default.
+The password will be hashes with a random salt and the result of the first hash will be hashes again 10 times by default.
 
 ```go
 hash, err := pwdHasher.Hash("password123")
