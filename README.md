@@ -19,7 +19,7 @@ go get github.com/CarlFlo/pwdHasher
 
 ## Usage
 
-> This code uses **SHA256** (a fast hash) and is not suitable for anything that requires protection, the code is also not tested to verify that it can withstand attacks such as timing attacks. For encrypting passwords so should a better solution such as [bcrypt](https://en.wikipedia.org/wiki/Bcrypt) be used. This code was made for fun as a short hobby project.
+> This code uses **SHA256** (a fast hash) and is not suitable for anything that requires protection, and the code is also not thoroughly tested for weaknesses or its ability to withstand attacks. For encrypting passwords in a production environment, a more robust and tested solution, such as bcrypt, should be used instead. This code was made for fun as a short hobby project.
 
 Anyways...
 
